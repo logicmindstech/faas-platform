@@ -4,7 +4,7 @@ A premium, high-conversion marketing funnel system built entirely with native we
 
 ## 🚀 Features
 
-- **Pure Architecture Performance:** 100% dependency-free. Built using raw HTML5, native Javascript (ES6), and vanilla CSS.
+- **Pure Architecture Performance:** 100% dependency-free. Built using raw HTML5, native Javascript (ES6), and vanilla CSS..
 - **Unified 600px Responsive Layout:** Strict structural width guidelines to ensure zero design or text misalignment.
 - **Formspree Background Sync Engine:** AJAX integrations that securely pass buyer data (leads, mobile numbers, and bank verification hashes) silently to your backend processors without forcing external redirect validation screens.
 - **Google Sheets Database Workflow:** Automated row compilation mapped cleanly for frictionless lead management and auditing.
