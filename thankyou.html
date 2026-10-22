@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprint Deployment Initiated | FaaS</title>
+    <!-- Linked to your external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Global structure overrides to ensure strict pitch black and centering */
+        body {
+            background-color: #000000 !important;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Unified Layout Wrapper forcing strict identical widths */
+        .unified-container {
+            width: 100%;
+            max-width: 600px; /* Forces every child box to lock onto this exact width line */
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Fixed Value Card Component */
+        .offer-card {
+            background-color: #0A0A0C;
+            border: 1px solid #1A1A1F;
+            padding: 48px 32px;
+            width: 100%;
+            margin-bottom: 24px;
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Unified Full-Width Submit Block to eliminate overflow glitches */
+        .full-width-btn {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-200 antialiased">
+
+    <!-- THANK YOU / DELIVERY MAIN HEADER CONTAINER -->
+    <header style="padding: 100px 0 40px 0; width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <span class="section-kicker">Deployment Status: Active</span>
+        
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.8rem); line-height: 1.2; margin-bottom: 16px; color: #FFFFFF; text-align: center; padding: 0 16px;">
+            Your FaaS Architecture Blueprint<br>
+            <span class="orange-accent">Is On Its Way To Your Inbox.</span>
+        </h1>
+        
+        <p style="font-size: 15px; color: #888888; max-width: 600px; margin: 0 auto 48px auto; text-align: center; padding: 0 16px; line-height: 1.6;">
+            While your automated pipeline compiles and transfers your file, check out this critical system configuration upgrade to accelerate your launch tonight.
+        </p>
+
+        <!-- THE UNIFIED STRUCTURAL CONTAINER -->
+        <div class="unified-container">
+            
+            <!-- Dynamic Offer Box Component (Strictly bounded to 600px layout width lines) -->
+            <div class="offer-card">
+                <span class="section-kicker" style="font-size: 11px; margin-bottom: 12px;">Exclusive Accelerator Pack Opportunity</span>
+                <h2 style="font-size: 24px; margin-bottom: 16px; color: #FFFFFF; font-weight: 800;">Upgrade to the FaaS Infrastructure Engine</h2>
+                
+                <p style="font-size: 15px; color: #CCCCCC; margin-bottom: 32px; max-width: 100%; line-height: 1.6;">
+                    Skip months of manual tool connections. Get 5 pre-configured, production-ready funnel architecture environments ready to copy, paste, and ship natively onto your infrastructure right now.
+                </p>
+
+                <!-- Fixed button bounded tightly within container rules -->
+                <button type="button" id="upgradeEngineBtn" class="cta-button full-width-btn">
+                    Upgrade My Deployment Engine Now &rarr;
+                </button>
+                
+                <div class="sub-cta-text" style="color: #FF5A00; font-weight: bold; margin-top: 16px; font-size: 11px; letter-spacing: 0.05em;">
+                    One-time offer &bull; Secure License Key Setup
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- FOOTER LINK BACK TO MAIN SITE -->
+    <footer style="padding: 40px 24px; font-size: 12px; color: #444444; border-top: 1px solid #1A1A1F; width: 100%; max-width: 600px; margin: 20px auto 0 auto; text-align: center;">
+        <p style="margin-bottom: 12px;"><a href="index.html" style="color: #666666; text-decoration: none;">&larr; Return back to main page</a></p>
+        <p style="font-size: 11px; color: #333333; margin: 0;">&copy; 2026 FaaS Platform. All rights reserved.</p>
+    </footer>
+
+    <!-- INTERACTION REDIRECT ENGINE LINK SCRIPT -->
+    <script>
+        document.getElementById('upgradeEngineBtn').addEventListener('click', function() {
+            window.location.href = 'checkout.html';
+        });
+    </script>
+
+</body>
+</html>

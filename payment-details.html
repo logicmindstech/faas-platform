@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Transfer | FaaS</title>
+    <!-- Linked to your external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Global structure overrides to ensure strict pitch black and centering */
+        body {
+            background-color: #000000 !important;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Unified Layout Wrapper forcing strict identical widths */
+        .unified-container {
+            width: 100%;
+            max-width: 600px; /* Forces every child box to lock onto this exact width line */
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Fixed Value Card Component */
+        .value-display-card {
+            background-color: #0A0A0C;
+            border: 1px solid #1A1A1F;
+            padding: 32px 24px;
+            width: 100%;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        /* Fixed Bank Presentation Component */
+        .bank-details-box {
+            background-color: #0A0A0C;
+            border: 1px dashed #FF5A00;
+            padding: 32px 24px;
+            margin-bottom: 40px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .bank-row {
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bank-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .bank-row strong {
+            color: #A0A0AA;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        /* Fixed Full-Width Textarea Box */
+        .form-textarea {
+            width: 100%;
+            height: 140px;
+            padding: 16px;
+            background-color: #000000;
+            border: 1px solid #1A1A1F;
+            color: #FFFFFF;
+            font-size: 14px;
+            margin-bottom: 20px;
+            resize: none;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .form-textarea:focus {
+            border-color: #FF5A00;
+            outline: none;
+        }
+
+        /* Unified Full-Width Submit Block */
+        .full-width-btn {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-200 antialiased">
+
+    <!-- MAIN INSTRUCTION GRAPHIC WRAPPER -->
+    <section style="padding: 100px 0 40px 0; width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <span class="section-kicker">Final Step Required</span>
+        <h1 style="font-size: 32px; margin-bottom: 12px; color: #FFFFFF; text-align: center; padding: 0 16px;">
+            Pending Bank Transfer Activation
+        </h1>
+        <p style="font-size: 15px; color: #888888; max-width: 600px; margin: 0 auto 48px auto; text-align: center; padding: 0 16px;">
+            Your infrastructure engine license hold has been secured. Please complete your manual bank transfer using the details below to finalize activation.
+        </p>
+
+        <!-- THE UNIFIED STRUCTURAL CONTAINER -->
+        <div class="unified-container">
+            
+            <!-- Box 1: Value Card (Bounded to 600px) -->
+            <div class="value-display-card">
+                <p style="font-size: 12px; color: #666666; margin: 0 0 4px 0; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Total Transfer Amount
+                </p>
+                <div style="font-size: 38px; font-weight: 900; color: #FF5A00;">$27.00</div>
+            </div>
+
+            <!-- Box 2: Bank Frame (Bounded to 600px) -->
+            <div class="bank-details-box">
+                <div class="bank-row"><strong>Bank Name:</strong> GOtyme Bank</div>
+                <div class="bank-row"><strong>Account Name:</strong> Marvin Arevillaga</div>
+                <div class="bank-row"><strong>Account Number:</strong> 0130-4639-8459</div>
+            </div>
+
+            <!-- Box 3: Form Block (Bounded to 600px) -->
+                        <!-- Post-Transfer Action Input Form linked to Formspree -->
+            <form id="paymentVerificationForm" action="https://formspree.io/f/maeqgepv" method="POST" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                
+                <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: #A0A0AA; margin-bottom: 12px; letter-spacing: 0.05em; text-align: center; width: 100%;">
+                    Submit Payment Reference / Verification Note
+                </label>
+                
+                <!-- The 'name' attribute determines the column header label inside your Google Sheet -->
+                <textarea name="Payment_Reference_Logs" id="paymentRefNotes" class="form-textarea" placeholder="Paste your Reference Number, Transaction Date, or mobile payment confirmation logs here..." required></textarea>
+
+                <button type="submit" class="cta-button full-width-btn">
+                    Submit Verification Reference &rarr;
+                </button>
+                
+                <div class="sub-cta-text" style="color: #666666; font-size: 11px; margin-top: 16px; text-align: center; width: 100%;">
+                    💡 Licenses are compiled and dispatched via SMS/Email within 2 hours of receipt verification.
+                </div>
+                
+            </form>
+
+    <script>
+        document.getElementById('paymentVerificationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const data = new FormData(form);
+            const button = form.querySelector('button[type="submit"]');
+            
+            button.innerText = "VERIFYING REFERENCE...";
+            button.style.opacity = "0.7";
+            button.disabled = true;
+
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = 'customer-care.html';
+                } else {
+                    alert('Submission error. Please verify input fields.');
+                    button.innerText = "Submit Verification Reference →";
+                    button.style.opacity = "1";
+                    button.disabled = false;
+                }
+            }).catch(error => {
+                console.log('Local offline sandbox execution shortcut taken:', error);
+                window.location.href = 'customer-care.html';
+            });
+        });
+    </script>
+
+
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer style="padding: 60px 24px 40px 24px; font-size: 12px; color: #444444; border-top: 1px solid #1A1A1F; width: 100%; max-width: 600px; margin: 40px auto 0 auto; text-align: center;">
+        <p style="margin-bottom: 12px;"><a href="index.html" style="color: #666666; text-decoration: none;">&larr; Back to Landing Page Home</a></p>
+        <p style="font-size: 11px; color: #333333; margin: 0;">&copy; 2026 FaaS Platform. All rights reserved.</p>
+    </footer>
+
+    <!-- LOGIC HANDLER -->
+    <script>
+        document.getElementById('paymentVerificationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const referenceInput = document.getElementById('paymentRefNotes').value;
+            if(!referenceInput.trim()) {
+                alert('Please supply verification coordinates.');
+                return;
+            }
+            window.location.href = 'customer-care.html';
+        });
+    </script>
+
+</body>
+</html>
