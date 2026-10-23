@@ -6,6 +6,15 @@
     <title>Secure Infrastructure Checkout | FaaS</title>
     <!-- Linked to your external stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HSPZNM5XJF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HSPZNM5XJF');
+</script>
     <style>
         /* Global structure overrides to ensure strict pitch black and centering */
         body {
@@ -110,7 +119,7 @@
             </div>
 
             <!-- Box 2: Billing Input Information Form pointing to Formspree -->
-            <form id="checkoutForm" action="https://formspree.io/f/maeqgepv
+            <form id="checkoutForm" action="https://formspree.io/f/maeqgepv" method="POST">
                 <!-- Explicit 'name' tags define spreadsheet headers inside Google Sheets -->
                 <label class="form-label">Full Name</label>
                 <input type="text" name="Buyer_Full_Name" id="fullName" class="form-input" placeholder="e.g., John Doe" required>
@@ -126,7 +135,6 @@
                 <div class="sub-cta-text" style="color: #666666; font-size: 11px; margin-top: 16px; text-align: center; width: 100%;">
                     🔒 Secure Transfer &bull; Licenses generated upon manual verification
                 </div>
-
             </form>
 
         </div>
